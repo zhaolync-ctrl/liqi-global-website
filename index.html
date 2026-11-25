@@ -73,13 +73,18 @@
       border: 1px solid #e9edf2; transition: .25s;
     }
     .product-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(20,50,80,.1); }
-    .product-art {
-      height: 210px; display: flex; justify-content: center;
-      align-items: center; font-size: 65px;
-      background: linear-gradient(135deg, #e6eff9, #f7e9e9);
-    }
-    .product-card:nth-child(2) .product-art { background: linear-gradient(135deg,#e5f3f0,#edf1fa); }
-    .product-card:nth-child(3) .product-art { background: linear-gradient(135deg,#fff0df,#f4eafa); }
+.product-art {
+  height: 240px;
+  overflow: hidden;
+  background: #f5f8fc;
+}
+
+.product-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
     .product-info { padding: 24px; }
     .product-info h3 { color: #17345a; margin-bottom: 8px; }
     .product-info p { color: #718096; font-size: 14px; }
@@ -173,8 +178,48 @@
         <p class="section-desc">Discover custom products for brands, businesses and promotional projects.</p>
       </div>
       <div class="product-grid">
-        <article class="product-card">
-          <div class="product-art">🧸</div>
+
+  <article class="product-card">
+    <div class="product-art">
+      <img src="images/figures.png" alt="Custom Plastic Figures">
+    </div>
+    <div class="product-info">
+      <h3>Custom Figures</h3>
+      <p>Custom-designed figures for brands, collectors and promotional projects.</p>
+    </div>
+  </article>
+
+  <article class="product-card">
+    <div class="product-art">
+      <img src="images/pvc-dropping.png" alt="Custom PVC Products">
+    </div>
+    <div class="product-info">
+      <h3>PVC Products</h3>
+      <p>Custom PVC products with creative shapes and colorful designs.</p>
+    </div>
+  </article>
+
+  <article class="product-card">
+    <div class="product-art">
+      <img src="images/plastic-toy.png" alt="Custom Plastic Toys">
+    </div>
+    <div class="product-info">
+      <h3>Plastic Toys</h3>
+      <p>Creative plastic toys developed to meet your product requirements.</p>
+    </div>
+  </article>
+
+  <article class="product-card">
+    <div class="product-art">
+      <img src="images/promotion-gift.png" alt="Custom Promotional Gifts">
+    </div>
+    <div class="product-info">
+      <h3>Promotional Gifts</h3>
+      <p>Customized promotional gifts to help your brand stand out.</p>
+    </div>
+  </article>
+
+</div>
           <div class="product-info">
             <h3>Custom Plastic Toys</h3>
             <p>Creative plastic toys designed around your ideas and requirements.</p>
