@@ -447,6 +447,19 @@
     .lightbox .lb-cap { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; color: #fff; font-size: 14px; }
     .lightbox .lb-close { position: absolute; top: 20px; right: 26px; color: #fff; font-size: 34px; line-height: 1; cursor: pointer; }
 
+    /* NEWS & NEW PRODUCTS */
+    .post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .post-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: .3s; }
+    .post-card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
+    .post-img { position: relative; height: 210px; overflow: hidden; }
+    .post-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .post-card:hover .post-img img { transform: scale(1.05); }
+    .post-tag { position: absolute; top: 14px; left: 14px; background: var(--red); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: .5px; padding: 5px 10px; border-radius: 4px; }
+    .post-body { padding: 22px 24px 26px; }
+    .post-date { display: block; color: var(--red); font-size: 12px; font-weight: 600; margin-bottom: 8px; }
+    .post-body h4 { color: var(--navy); font-size: 18px; line-height: 1.4; margin-bottom: 10px; }
+    .post-body p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
     /* FAQ */
     .faq-wrap { max-width: 840px; margin: auto; }
     details { background: #fff; border: 1px solid var(--line); border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
@@ -541,6 +554,7 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery-item.wide { grid-column: span 2; grid-row: span 1; aspect-ratio: 16/9; }
+      .post-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .section { padding: 62px 0; }
@@ -559,6 +573,8 @@
       .gallery-item figcaption { font-size: 11px; padding: 8px 10px; }
       .gallery-item.wide figcaption { font-size: 13px; }
       .lightbox { padding: 16px; }
+      .post-grid { grid-template-columns: 1fr; }
+      .post-img { height: 200px; }
     }
   </style>
 </head>
@@ -592,6 +608,7 @@
           <a href="#capability">Manufacturing</a>
           <a href="#factory-video">Factory Video</a>
           <a href="#factory">Our Factory</a>
+          <a href="#news">News</a>
           <a href="#about">About Us</a>
           <a href="#process">Our Process</a>
           <a href="#faq">FAQ</a>
@@ -608,6 +625,7 @@
         <a href="#capability">Manufacturing</a>
         <a href="#factory-video">Factory Video</a>
         <a href="#factory">Our Factory</a>
+        <a href="#news">News</a>
         <a href="#about">About Us</a>
         <a href="#process">Our Process</a>
         <a href="#faq">FAQ</a>
@@ -830,6 +848,51 @@
           <img src="dust-free-room.webp" alt="Dust-free packing room with automated packaging machines" loading="lazy">
           <figcaption>Dust-free packing room</figcaption>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NEWS & NEW PRODUCTS ============
+       如何新增一条新闻/新品：
+       1. 复制下面 <article class="post-card"> ... </article> 整段
+       2. 改 img 的 src（图片文件名）和 alt（图片说明）
+       3. 改 <span class="date">里的日期、<h4>里的标题、<p>里的简介
+       4. 图片放到本网站文件夹里，和 index.html 同一层
+       5. 想显示为「新品」就把 date 里的 NEW ARRIVAL 换成 COMPANY NEWS 之类
+  ================================================= -->
+  <!-- NEWS -->
+  <section class="section" id="news">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Latest Updates</span>
+        <h2>News &amp; New Products</h2>
+        <p>What's new at LiQi — new products, factory updates and stories from our team.</p>
+      </div>
+      <div class="post-grid">
+        <article class="post-card">
+          <div class="post-img"><img src="painting-workshop.webp" alt="Spray painting workshop at LiQi factory" loading="lazy"><span class="post-tag">FACTORY</span></div>
+          <div class="post-body">
+            <span class="post-date">15 Nov 2026</span>
+            <h4>Expanding our spray painting capacity</h4>
+            <p>Our painting workshop now handles larger custom orders with improved color consistency and faster turnaround.</p>
+          </div>
+        </article>
+        <article class="post-card">
+          <div class="post-img"><img src="custom-plastic-figures.webp" alt="Custom plastic figures produced by LiQi" loading="lazy"><span class="post-tag">NEW PRODUCT</span></div>
+          <div class="post-body">
+            <span class="post-date">02 Nov 2026</span>
+            <h4>New custom figure series released</h4>
+            <p>A new range of detailed plastic figures for promotional and retail projects — fully customizable in design and color.</p>
+          </div>
+        </article>
+        <article class="post-card">
+          <div class="post-img"><img src="dust-free-room.webp" alt="Dust-free packing room at LiQi factory" loading="lazy"><span class="post-tag">FACTORY</span></div>
+          <div class="post-body">
+            <span class="post-date">20 Oct 2026</span>
+            <h4>Upgraded dust-free packing line</h4>
+            <p>Our new packing line improves product protection and helps us meet stricter quality requirements for export orders.</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
